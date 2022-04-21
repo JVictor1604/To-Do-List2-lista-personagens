@@ -1,0 +1,56 @@
+ [ { 
+
+    "nome": "The Last of Us",
+
+    "descricao":
+      "The Last of Us é uma franquia de jogos eletrônicos de ação-aventura e survival horror exclusiva da PlayStation, criada por Neil Druckmann. A franquia é situada em um mundo pós-apocalíptico, com seres humanos hostis e criaturas canibalísticas infectadas por uma mutação do fungo cordyceps.",
+
+    "genero": "Ação-aventura",
+
+    "plataforma": "PS4",
+
+    "preco": 50,
+
+    "estoque": 15,
+
+    "lançamento": 2013
+
+}, 
+
+  {
+
+    "nome": "God of War II",
+
+    "descricao":
+      "God of War II é um jogo eletrônico de ação e aventura com elementos hack and slash. É um jogo para um jogador em terceira pessoa visualizado a partir de uma perspectiva de câmera fixa.",
+
+    "genero": "Ação-aventura",
+
+    "plataforma": "PS3",
+
+    "preco": 30,
+
+    "estoque": 25,
+
+    "lançamento": 2007
+
+  },
+
+  {
+
+    "nome": "FIFA STREET 2",
+
+    "descricao":
+      "simula com precisão o futebol de rua, em que o jogador pode assumir o controle de versões de 4-a-lado de times nacionais de futebol em partidas onde o objetivo é ganhar marcando uma quantidade definida de gols ou pontos por meio de truques ou dentro de um limite de tempo.",
+
+    "genero": "Ação-aventura",
+
+    "plataforma": "PS2",
+
+    "preco": 80,
+
+    "estoque": 4,
+
+    "lançamento": 2006
+
+  }]

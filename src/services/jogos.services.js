@@ -1,26 +1,34 @@
-const findJogoService = () => {
-    return Jogos;
+const Jogos = require('../models/Jogos');
+
+const findJogoService = async () => {
+
+    const jogos = await Jogos.find();
+
+    return jogos;
 };
 
-const findJogoByIdService = (id) => {
-    return Jogos.find((jogo) => jogo.id == id);
-};
+const findJogoByIdService = async (id) => {
+    
+    const jogo = await Jogos.findById(id);
 
-const addJogoService = (jogo) =>{
-    Jogos.push(jogo);
     return jogo;
 };
 
-const uptadeJogoService = (id, jogoedited) => {
-    jogoedited['id'] = id;
-    const jogoIndex = Jogos.findIndex((jogo) => jogo.id == id);
-    Jogos[jogoIndex] = jogoedited;
-    return jogoedited;
+const addJogoService = async (newJogo) =>{
+
+    const jogoCriado = await Jogos.create(newJogo)
+    return jogoCriado;
 };
 
-const deleteJogoService = (id) => {
-    const jogoIndex = Jogos.findIndex((jogo) => jogo.id == id);
-    return Jogos.splice(jogoIndex, 1);
+const uptadeJogoService = async (id, jogoedited) => {
+    
+    const jogoAtualizado = await Jogos.findByIdAndUpdate(id, jogoedited);
+    return jogoAtualizado;
+};
+
+const deleteJogoService = async (id) => {
+    
+    return await Jogos.findByIdAndRemove(id);    
 };
 
 module.exports = {
