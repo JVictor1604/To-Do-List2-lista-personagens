@@ -1,1 +1,1 @@
-# To-Do-List2-lista-personagens
+# Seja bem-vindo(a) ao meu projeto To-do-List 2!! Esse projeto tem como objetivo armazenar e manipular dados de games usando Node.js realizando as devidas validações. Esses dados estão armazenados no banco de dados (Mongo-DB) porém deixei disponível um arquivo json com exemplos dos modelos de dados. 
