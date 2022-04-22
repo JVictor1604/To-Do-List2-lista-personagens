@@ -6,16 +6,7 @@ const findJogosController = async (req, res) => {
   res.send(Alljogos);
 };
 
-
-
-
 const findJogoByIdController = async (req, res) => {
-
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    res.status(400).send({ message: 'ID inválido!' });
-    return;
-  }
-
   jogoEscolhido = await JogosService.findJogoByIdService(req.params.id);
 
   if (!jogoEscolhido) {
@@ -25,59 +16,19 @@ const findJogoByIdController = async (req, res) => {
   }
 };
 
-
-
-
 const addJogoController = async (req, res) => {
-
   let retorno = JogosService.addJogoService(req.body);
 
-  if (
-    !req.body ||
-    !req.body.nome ||
-    !req.body.genero ||
-    !req.body.plataforma ||
-    !req.body.estoque ||
-    !req.body.lançamento ||
-    !req.body.preco
-  ) {
-    return res.status(400).send({
-      message:
-        'Você não preencheu todos os dados para adicionar um novo jogo a seleção!',
-    });
-  } else {
-    if (retorno) {
-      const newJogo = await JogosService.addJogoService(req.body);
+  if (retorno) {
+    const newJogo = await JogosService.addJogoService(req.body);
 
-      res.send({ message: 'Jogo cadastrado com sucesso!' });
-    } else {
-      res.status(400).send({ message: 'Houve um erro' });
-    }
+    res.send({ message: 'Jogo cadastrado com sucesso!' });
+  } else {
+    res.status(400).send({ message: 'Houve um erro' });
   }
 };
 
-
-
 const updateJogosController = async (req, res) => {
-  if (
-    !req.body ||
-    !req.body.nome ||
-    !req.body.genero ||
-    !req.body.plataforma ||
-    !req.body.estoque ||
-    !req.body.lançamento ||
-    !req.body.preco
-  ) {
-    return res.status(400).send({
-      message: 'Você não preencheu todos os dados para editar o jogo!',
-    });
-  }
-
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    res.status(400).send({ message: 'ID inválido!' });
-    return;
-  }
-
   const updatedJogo = await JogosService.uptadeJogoService(
     req.params.id,
     req.body,
@@ -85,17 +36,8 @@ const updateJogosController = async (req, res) => {
   res.send(updatedJogo);
 };
 
-
-
-
 const deleteJogoController = async (req, res) => {
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    res.status(400).send({ message: 'ID inválido!' });
-    return;
-  }
-
-  const jogoEscolhido = await JogosService.findJogoByIdService(req.params.id)
-
+  const jogoEscolhido = await JogosService.findJogoByIdService(req.params.id);
 
   if (!jogoEscolhido) {
     return res.status(400).send({ message: 'Jogo não encontrado' });
