@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 function connectToDatabase() {
   mongoose
-    .connect('mongodb://localhost:27017/Jogos-DB', {
+    .connect('mongodb+srv://Victor:zDhxbm9gIGEnnrFb@apirick-and-morty.mq3aj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
